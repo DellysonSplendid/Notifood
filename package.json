@@ -1,0 +1,28 @@
+{
+  "name": "Notifood",
+  "version": "1.0.0",
+  "description": "A SauceCode Hackathon Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DellysonSplendid/Notifood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DellysonSplendid/Notifood/issues"
+  },
+  "homepage": "https://github.com/DellysonSplendid/Notifood#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2",
+    "node-sass": "^4.11.0",
+    "node-sass-middleware": "^0.11.0"
+  }
+}
