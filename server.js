@@ -16,10 +16,13 @@ app.use(
   })
 );
 app.set("view engine", "ejs");
-express.static(path.join(__dirname, "public"));
+// express.static(path.join(__dirname, "public"));
+app.use(express.static("public"));
 
 // Routes
 app.use("/", route);
+app.use("/register", route);
+app.use("/login", route);
 app.listen(PORT, () => {
   console.log(`Server started on Port ${PORT}...`);
 });
