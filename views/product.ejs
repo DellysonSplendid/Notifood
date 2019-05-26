@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Index</title>
+  </head>
+
+  <body>
+    <%- include ./partials/nav%>
+
+    <div class="four-cards">
+      <div class="card-container">
+        <% products.forEach(function(product){%>
+
+        <div class="card">
+          <div class="card-image">
+            <img src="../<%=product.productImage%>" alt="ProductImage" />
+          </div>
+          <div class="card-body">
+            <div>Product Name: <%=product.productName%></div>
+            <div>Price: <%=product.price%></div>
+            <div>Quality: <%=product.quality%></div>
+            <div>Location: <%=product.location%></div>
+            <div>Type: <%=product.type%></div>
+            <div>
+              <a href="/products/view/<%=product.id%>"> View More Info.</a>
+            </div>
+          </div>
+        </div>
+
+        <%})%>
+      </div>
+    </div>
+
+    <%- include ./partials/footer%>
+  </body>
+</html>

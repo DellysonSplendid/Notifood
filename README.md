@@ -1,14 +1,12 @@
 # Notifood
 
-A SauceCode Hackathon Project
+A Personal Project
 
-# Contributors
+# Contributor(s)
 
 ===================
 
 - Isiaka Lukman Bamidele ( isiakalukmandellyson@gmail.com )
-- Remilekun Elijah ( remilekunelijah21997@gmail.com )
-- Adeniyi Adebayo ( ajoshbayu@gmail.com )
 
 ## Dependencies
 
@@ -19,9 +17,17 @@ A SauceCode Hackathon Project
 
 ## #Activities [Milestone]
 
-- Setup the server
-- Setup the routes
-- Setup Node-sass
+- Setup the server [*]
+- Setup the routes [*]
+- Setup Node-sass [*]
+- Writing complex database Schema i.e. Create a Complex array of data (products)[*]
+- Pull data from the Database and display it on the frontend[*]
+- Create a Particular Link from the card that leads to the chart displaying more info. on the products[*]
+- Add a Product Image Upload Functionalities[*]
+- Add a User Profile Picture[]
+- Setting up the Frontend[]
+- Create an update Route []
+- Create an Automation []
 
 ## To Use /or Contribute
 

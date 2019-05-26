@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title><%=title%></title>
+</head>
+
+<body>
+    <header>
+       <%- include ./partials/nav%>
+        
+    </header>
+    <div class="container">
+        <form action="/products/view" method="post" enctype="multipart/form-data">
+        
+            <label for="food-name">Product Name</label>
+           <select required="required" name="productName" id="productName" class="select-dropdown">
+               <option> None </option>
+               <option value="Apple">Apple</option>
+               <option value="Beans">Beans</option>
+               <option value="Banana">Banana</option>
+               <option value="Cassava">Cassava</option>
+               <option value="Cabbage">Cabbage</option>
+               <option value="Coconut">Coconut</option>
+               <option value="Cocoyam">Cocoyam</option>
+               <option value="Coorn">Corn</option>
+               <option value="Cucumber">Cucumber</option>
+               <option value="Dates">Dates</option>
+               <option value="Groundnut">Groundnut</option>
+               <option value="Kolanut">Kolanut</option>
+               <option value="Lemon">Lemon</option>
+               <option value="Mango">Mango</option>
+               <option value="Melon">Melon</option> 
+               <option value="Millet">Millet</option>
+               <option value="Nutmeg">Nutmeg</option>
+               <option value="Oats">Oats</option>
+               <option value="Oil-Palm">Oil-Palm</option>
+               <option value="Onion">Onion</option>
+               <option value="Okra">Okra</option>
+               <option value="Orange">Orange</option>
+               <option value="Pawpaw">Pawpaw</option>
+               <option value="Pineapple">Pineapple</option>
+               <option value="Peanut">Peanut</option>
+               <option value="Pear">Pear</option>
+               <option value="Pepper">Pepper</option>
+               <option value="Plantain">Plantain</option>
+               <option value="Potato">Potato</option>
+               <option value="Rice">Rice</option>
+               <option value="Soybeans">Soybeans</option>
+               <option value="Tomato">Tomato</option>
+               <option value="Watermelon">Watermelon</option>
+               <option value="Wheat">Wheat</option>
+               <option value="Yam">Yam</option>
+              
+              
+           </select>
+            <label for="location" >Location:</label>
+        <select required="required" name="location" id="select"  class="select-dropdown">
+            <option>-None-</option>
+            <option value="ABUJA-FCT">ABUJA-FCT</option>
+            <option value="abia">ABIA</option>
+            <option value="adamawa">ADAMAWA</option>
+            <option value="akwa-ibom">AKWA IBOM</option>
+            <option value="anambra">ANAMBRA</option>
+            <option value="bauchi">BAUCHI</option>
+            <option value="bayelsa">BAYELSA</option>
+            <option value="benue">BENUE</option>
+            <option value="borno">BORNO</option>
+            <option value="cross-river">CROSS RIVER</option>
+            <option value="delta">DELTA</option>
+            <option value="ebonyi">EBONYI</option>
+            <option value="edo">EDO</option>
+            <option value="ekiti">EKITI</option>
+            <option value="enugu">ENUGU</option>
+            <option value="gombe">GOMBE</option>
+            <option value="imo">IMO</option>
+            <option value="jigawa">JIGAWA</option>
+            <option value="kaduna">KADUNA</option>
+            <option value="kano">KANO</option>
+            <option value="katsina">KATSINA</option>
+            <option value="kebbi">KEBBI</option>
+            <option value="kogi">KOGI</option>
+            <option value="kwara">KWARA</option>
+            <option value="lagos">LAGOS</option>
+            <option value="nassarawa">NASSARAWA</option>
+            <option value="niger">NIGER</option>
+            <option value="ogun">OGUN</option>
+            <option value="ondo">ONDO</option>
+            <option value="osun">OSUN</option>
+            <option value="oyo">OYO</option>
+            <option value="plateau">PLATEAU</option>
+            <option value="rivers">RIVERS</option>
+            <option value="sokoto">SOKOTO</option>
+            <option value="taraba">TARABA</option>
+            <option value="yobe">YOBE</option>
+            <option value="zamfara">ZAMFARA</option>
+        </select>
+            <div>
+            <label for="price">Price:</label>
+            <input type="text" id="price" class="price-input" maxlength="10" required="required" name="price">
+            <div class="price-range"></div>
+            </div>
+            <label for="quality">Quality</label>
+            <select name="quality" id="select" class="select-dropdown">
+               
+                <option value="Good">Good</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Bad">Bad</option>
+            </select>
+            <label for="Type">Type</label>
+            <select name="type" id="select" class="select-dropdown">
+                <option value="indigenous">Indigenous</option>
+                <option value="foreign">Foreign</option>
+            </select>
+<br>
+            <label for="fileUpload">Upload Product Image<br>
+            <input type="file" name="productImage" required="required">
+</label>
+
+<div class="clearfix">
+    <button type="submit" class="signupbtn">submit</button>
+</div>
+        
+        </form>
+
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+  <%- include ./partials/extensions%>
+   <%- include ./partials/footer%>
+</body>
+
+</html>

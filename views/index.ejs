@@ -4,14 +4,157 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Index</title>
+    <title><%=title%></title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/app.css" />
   </head>
   <body>
     <header>
-      <h1>NotiFood</h1>
+      <%- include ./partials/nav%>
+      <div class="banner">
+        <h2>Welcome to NotiFood</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quam
+          voluptatum qui aliquam architecto eaque enim rem quae, dolor sunt
+          dolorum, optio similique ad? Deserunt eum vero deleniti, delectus,
+          repudiandae reprehenderit dolor inventore similique provident ullam
+        </p>
+      </div>
     </header>
-    <h1>Hello World</h1>
+
+    <section class="standalone-card">
+      <h2 class="heading-2">
+        What we do...
+      </h2>
+      <p class="mission">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+        nisi quos voluptatibus exercitationem minus voluptatem tempora ullam,
+        eaque aut ab beatae corporis libero quibusdam ut saepe quam nihil
+        tenetur sequi sint perferendis facilis eveniet, temporibus quidem
+        minima! Fugit similique est nobis corrupti quam. Tempora mollitia dolore
+        atque minus nemo molestias optio, eum, vel voluptatibus vitae explicabo
+        itaque ea possimus? Eos debitis sint dolor quod alias dolorum ad aliquid
+        itaque perferendis deleniti ullam, fugit aspernatur deserunt maxime
+        obcaecati tempore vero nihil quaerat quidem? Est, asperiores nam
+        similique ad quaerat nostrum dicta fugit accusantium! Maiores nihil
+        aliquam ut, odio eaque dolorem incidunt!
+      </p>
+    </section>
+    <section class="four-cards">
+      <div class="card-container">
+        <div class="card">
+          <div class="card-image">
+            <img src="../images/jed-owen-687229-unsplash.jpg" alt="Image" />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="../images/graphic-node-1360825-unsplash.jpg"
+              alt="Image"
+            />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="/images/agence-producteurs-locaux-damien-kuhn-97729-unsplash.jpg"
+              alt="Image"
+            />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="four-cards">
+      <div class="card-container">
+        <div class="card">
+          <div class="card-image">
+            <img src="../images/jed-owen-687229-unsplash.jpg" alt="Image" />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="../images/jed-owen-687229-unsplash.jpg" alt="Image" />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="../images/agence-producteurs-locaux-damien-kuhn-97729-unsplash.jpg"
+              alt="Image"
+            />
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Lorem Ipsum</h3>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            voluptates sunt perspiciatis at dolores odio tempore ea, ducimus
+            iusto vero ipsam maxime temporibus dignissimos explicabo voluptatem
+            eius architecto fuga esse corrupti sed quia exercitationem atque ex.
+            Non excepturi voluptas itaque?
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include ./partials/footer%> <%- include ./partials/extensions%>
   </body>
 </html>
