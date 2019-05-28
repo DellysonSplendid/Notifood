@@ -262,7 +262,7 @@ label {
   margin-left: 1em;
   margin-bottom: 1em;
   width: 400px;
-  height: 500px;
+  height: auto;
   background-image: linear-gradient(
     to right,
     #f78ca0 0%,
@@ -289,6 +289,14 @@ label {
   border-top-left-radius: 0.5em;
   /* height: 100px; */
 }
+.card-body .detail {
+  margin-top: 1em;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #f4f4f4;
+
+  width: auto;
+}
 /* Footer */
 footer {
   background: rgba(0, 0, 0, 0.603);
@@ -309,6 +317,7 @@ footer {
 .price-range {
   height: 50px;
   width: 100%;
+  transition: background-color 1s ease-in;
 }
 
 /* canvsd */

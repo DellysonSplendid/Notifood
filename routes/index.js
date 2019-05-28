@@ -1,9 +1,10 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const User = require("../models/User.js");
 const multer = require("multer");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
+const passport = require("passport");
+const { ensureAuthenticate } = require("../config/auth");
 
 router.get("/", (req, res) => {
   res.render("index", {
@@ -13,6 +14,12 @@ router.get("/", (req, res) => {
 router.get("/register", (req, res) => {
   res.render("register", {
     title: "Register"
+  });
+});
+
+router.get("/login", (req, res) => {
+  res.render("login", {
+    title: "Login"
   });
 });
 
@@ -41,33 +48,79 @@ const upload = multer({
 });
 
 router.post("/register", upload.single("profilePicture"), (req, res) => {
-  // Do some Validations
   const { email, password, password2 } = req.body;
-  let user = new User({
-    email: email,
-    password: password,
-    password2: password2,
-    profilePicture: req.file.path
-  });
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(user.password, salt, (err, hash) => {
-      if (err) {
-        throw err;
-      }
-      user.password = hash;
-      user
-        .save()
-        .then(user => {
-          res.redirect("/login");
-        })
-        .catch(err => [console.log(err)]);
+  let errors = [];
+
+  if (!email || !password || !password2) {
+    errors.push({ msg: "Please enter all fields" });
+  }
+
+  if (password != password2) {
+    errors.push({ msg: "Passwords do not match" });
+  }
+
+  if (password.length < 6) {
+    errors.push({ msg: "Password must be at least 6 characters" });
+  }
+
+  if (errors.length > 0) {
+    res.render("register", {
+      title: "Register",
+      errors,
+      email,
+      password,
+      password2
     });
-  });
-});
-router.get("/login", (req, res) => {
-  res.render("login", {
-    title: "Login"
-  });
+  } else {
+    User.findOne({ email: email }).then(user => {
+      if (user) {
+        errors.push({ msg: "Email already exists" });
+        res.render("register", {
+          errors,
+          email,
+          password,
+          password2
+        });
+      } else {
+        const newUser = new User({
+          email: email,
+          password: password,
+          profilePicture: req.file.path
+        });
+
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser
+              .save()
+              .then(user => {
+                req.flash(
+                  "success_msg",
+                  "You are now registered and can log in"
+                );
+                res.redirect("/login");
+              })
+              .catch(err => console.log(err));
+          });
+        });
+      }
+    });
+  }
 });
 
+// Login
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", {
+    successRedirect: "/products/add",
+    failureRedirect: "/login",
+    failureFlash: true
+  })(req, res, next);
+});
+// Logout
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.flash("success_msg", "You are logged out");
+  res.redirect("/login");
+});
 module.exports = router;

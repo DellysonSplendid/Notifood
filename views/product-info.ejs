@@ -19,11 +19,14 @@
             <img src="/<%=products.productImage%>" alt="ProductImage" />
           </div>
           <div class="card-body">
-            <div>Product Name: <%=products.productName%></div>
-            <div>Price: <%=products.price%></div>
-            <div>Quality: <%=products.quality%></div>
-            <div>Location: <%=products.location%></div>
-            <div>Type: <%=products.type%></div>
+            <div class="detail">Product Name: <%=products.productName%></div>
+            <div class="detail">Price: <%=products.price%></div>
+            <div class="detail">Quality: <%=products.quality%></div>
+            <div class="detail">Location: <%=products.location%></div>
+            <div class="detail">Type: <%=products.type%></div>
+            <div class="detail">
+              Last Updated: <%= new Date().toDateString()%>
+            </div>
           </div>
         </div>
       </div>
@@ -44,7 +47,17 @@
             strokeColor: "#ACC26D",
             pointColor: "#fff",
             pointStrokeColor: "#9DB86D",
-            data: ["<%=products.price%>"]
+            data: [
+              "<%=products.price%>",
+              1000,
+              2000,
+              4000,
+              5000,
+              6000,
+              7000,
+              8000,
+              9000
+            ]
           }
         ]
       };

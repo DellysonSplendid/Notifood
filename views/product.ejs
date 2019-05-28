@@ -21,11 +21,14 @@
             <img src="../<%=product.productImage%>" alt="ProductImage" />
           </div>
           <div class="card-body">
-            <div>Product Name: <%=product.productName%></div>
-            <div>Price: <%=product.price%></div>
-            <div>Quality: <%=product.quality%></div>
-            <div>Location: <%=product.location%></div>
-            <div>Type: <%=product.type%></div>
+            <div class="detail">Product Name: <%=product.productName%></div>
+            <div class="detail">Price: <%=product.price%></div>
+            <div class="detail">Quality: <%=product.quality%></div>
+            <div class="detail">Location: <%=product.location%></div>
+            <div class="detail">Type: <%=product.type%></div>
+            <div class="detail">
+              Last Updated: <%= new Date().toDateString()%>
+            </div>
             <div>
               <a href="/products/view/<%=product.id%>"> View More Info.</a>
             </div>

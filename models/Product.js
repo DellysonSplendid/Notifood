@@ -24,6 +24,10 @@ const productSchema = new mongoose.Schema({
   productImage: {
     required: false,
     type: String
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

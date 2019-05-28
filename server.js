@@ -10,8 +10,10 @@ const productRouter = require("./Routes/productRouter.js");
 const userApiRouter = require("./Routes/userApiRouter.js");
 const productsApiRouter = require("./Routes/productsApiRouter.js");
 const config = require("./config/database.js");
-
+const passport = require("passport");
+require("./config/passport")(passport);
 // routes  = require('./routes'),
+
 app = express();
 mongoose
   .connect(config.MongoURI, { useNewUrlParser: true })
@@ -29,11 +31,20 @@ app.use(
     cookie: { secure: true }
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 app.set("view engine", "ejs");
 app.use("/uploads", express.static("uploads"));
 app.use(express.static(path.join(__dirname, "public")));
 // app.use(express.static("public"));
-
+// Global variables
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
+  next();
+});
 // Routes
 app.use("/", route);
 app.use("/register", route);

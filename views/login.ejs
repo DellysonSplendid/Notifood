@@ -13,6 +13,7 @@
       <%- include ./partials/nav%>
     </header>
     <div class="container">
+      <%- include ./partials/message%>
       <form action="/login" method="POST" style="border:2px solid #ccc">
         <div class="container">
           <label for="email"><b>Email</b></label>
@@ -22,7 +23,7 @@
           <input
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
           />
 

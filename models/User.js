@@ -10,7 +10,7 @@ let userSchema = new mongoose.Schema({
     type: String
   },
   password2: {
-    required: true,
+    required: false,
     type: String
   },
   profilePicture: {

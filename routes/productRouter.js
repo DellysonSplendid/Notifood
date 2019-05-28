@@ -3,6 +3,9 @@ const router = express.Router();
 const multer = require("multer");
 const Product = require("../models/Product.js");
 
+const passport = require("passport");
+const { ensureAuthenticated } = require("../config/auth");
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./uploads/");
@@ -38,7 +41,7 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/add", (req, res) => {
+router.get("/add", ensureAuthenticated, (req, res) => {
   res.render("addProduct", {
     title: "Add Product"
   });
@@ -80,6 +83,7 @@ router.delete("/:id", (req, res) => {
     res.json(product);
   });
 });
+
 router.get("/:id", (req, res) => {
   let condition = { _id: req.params.id };
   Product.findOne(condition, (err, products) => {
@@ -90,6 +94,23 @@ router.get("/:id", (req, res) => {
       products
     });
   });
+});
+router.get("/:page", (req, res, next) => {
+  let perPage = 6;
+  let page = req.params.page || 1;
+  Product.find({})
+    .skip(perPage * page - perPage)
+    .limit(perPage)
+    .exec((err, products) => {
+      Product.count().exec(function(err, count) {
+        if (err) return next(err);
+        res.render("product", {
+          products: products,
+          current: page,
+          page: Math.ceil(count / perPage)
+        });
+      });
+    });
 });
 
 module.exports = router;

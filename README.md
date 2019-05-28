@@ -24,14 +24,13 @@ A Personal Project
 - Pull data from the Database and display it on the frontend[*]
 - Create a Particular Link from the card that leads to the chart displaying more info. on the products[*]
 - Add a Product Image Upload Functionalities[*]
-- Add a User Profile Picture[]
-- Setting up the Frontend[]
-- Create an update Route []
-- Create an Automation []
+- Add a User Profile Picture[*]
+- Setting up the Frontend[*]
+- Implement a Chart[*]
 
 ## To Use /or Contribute
 
 Clone the Repository
 
 `Run Npm Install`
-`Run npm Start`
+`Run npm run dev`
