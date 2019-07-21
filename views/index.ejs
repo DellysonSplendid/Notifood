@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%=title%></title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/app.css" />
+    <%- include ./partials/header%>
   </head>
   <body>
     <header>
@@ -99,7 +98,48 @@
         </div>
       </div>
     </section>
+    <section class="grids">
+      <div class="side-one">
+        <h1 class="heading-1">Our Mission Statement</h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+        asperiores obcaecati voluptates quidem ab nam dolorem pariatur officia,
+        corrupti dolores praesentium! Magni, illum sunt ea ad exercitationem
+        eius cumque sapiente voluptas quidem deserunt, nobis repudiandae
+        obcaecati perferendis quam quas iste et ab beatae neque! Est recusandae,
+        laboriosam minus veritatis eos nihil cum facere hic, cupiditate maxime
+        ipsa facilis quasi in inventore fugiat? Ratione qui quibusdam,
+        consequatur voluptas numquam minima, quod provident ex sint asperiores
+        atque tempora minus ducimus a expedita sed nam quia maiores? Porro quia
+        consequuntur, sapiente soluta numquam fuga in hic at consectetur libero
+        aperiam corporis expedita perferendis.
+      </div>
 
+      <div class="side-two">
+        <div class="sub-cards">
+          <div class="card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+            asperiores obcaecati voluptates quidem ab nam dolorem pariatur
+            officia, corrupti dolores praesentium! Magni, illum sunt ea ad
+            exercitationem eius cumque sapiente voluptas quidem deserunt, nobis
+            repudiandae obcaecati perferendis
+          </div>
+          <div class="card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+            asperiores obcaecati voluptates quidem ab nam dolorem pariatur
+            officia, corrupti dolores praesentium! Magni, illum sunt ea ad
+            exercitationem eius cumque sapiente voluptas quidem deserunt, nobis
+            repudiandae obcaecati perferendis
+          </div>
+          <div class="card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+            asperiores obcaecati voluptates quidem ab nam dolorem pariatur
+            officia, corrupti dolores praesentium! Magni, illum sunt ea ad
+            exercitationem eius cumque sapiente voluptas quidem deserunt, nobis
+            repudiandae obcaecati perferendis
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="four-cards">
       <div class="card-container">
         <div class="card">
@@ -154,6 +194,19 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="subscription">
+      <h1 class="heading-1">Subscribe to our Newsletter</h1>
+      <form action="#">
+        <input type="text" name="email" class="email" />
+        <input type="button" value="Submit" />
+      </form>
+    </section>
+    <section class="slideShow">
+      <div class="slide"></div>
+      <!-- <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div> -->
     </section>
     <%- include ./partials/footer%> <%- include ./partials/extensions%>
   </body>

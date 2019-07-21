@@ -12,7 +12,7 @@ body {
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url(../images/cool-background.png);
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -32,14 +32,17 @@ header {
   height: auto;
   width: 100vw;
   line-height: 70px;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     #f78ca0 0%,
     #f9748f 19%,
     #fd868c 60%,
     #fe9a8b 100%
-  );
-  /* background: url(../images/cool-background2.png); */
+  ); */
+  background: url(../images/agence-producteurs-locaux-damien-kuhn-97729-unsplash.jpg)
+    no-repeat;
+  background-size: 100%;
+  color: #f1f1f1;
   font-family: "pacifico", sans-serif;
 }
 header h1 {
@@ -48,6 +51,8 @@ header h1 {
 header .nav {
   text-align: center;
   font-family: "nunito  ", sans-serif;
+
+  background: rgba(165, 42, 42, 0.863);
 }
 .container {
   max-width: 760px;
@@ -74,100 +79,6 @@ header .nav {
   font-size: 1.2em;
   width: 60%;
   margin: auto;
-}
-/* Full-width input fields */
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: rgb(151, 84, 84);
-  font-weight: 700;
-  font-size: 16px;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  background-color: rgb(151, 84, 84);
-  color: #f4f4f4;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity: 1;
-}
-
-input[type="file"] {
-  background: #222;
-  border: none;
-}
-
-/* Nav Links */
-.nav {
-  width: 100%;
-  height: auto;
-  border-bottom: #222 solid 2px;
-}
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  padding: 1.2rem;
-}
-.nav a:hover {
-  color: #f44336;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn,
-.signupbtn {
-  padding: 14px 20px;
-  background-color: #222;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,
-.signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn,
-  .signupbtn {
-    width: 100%;
-  }
 }
 
 /* Product-container */
@@ -234,72 +145,9 @@ label {
   margin-top: 1em;
 }
 
-/* CARD section */
-
-.standalone-card {
-  max-width: 760px;
-  height: 300px;
-  margin: 50px auto;
-  text-align: center;
-  line-height: 1.5;
-  box-shadow: 0px 2px 0px 0px rgba(238, 136, 3, 0.5);
-}
-
-.four-cards {
-  max-width: 1390px;
-  margin: 50px auto;
-  font-family: "nunito", sans-serif !important;
-}
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-}
-.card {
-  border-radius: 0.5em;
-  text-align: left;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  width: 400px;
-  height: auto;
-  background-image: linear-gradient(
-    to right,
-    #f78ca0 0%,
-    #f9748f 19%,
-    #fd868c 60%,
-    #fe9a8b 100%
-  );
-}
-.card-body {
-  padding-top: 0.9em;
-  padding-left: 0.9em;
-}
-.card-title {
-  margin-bottom: 0.3em;
-}
-.card-image {
-  width: 100%;
-  height: 50%;
-}
-.card-image img {
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 0.5em;
-  border-top-left-radius: 0.5em;
-  /* height: 100px; */
-}
-.card-body .detail {
-  margin-top: 1em;
-  font-weight: 700;
-  text-transform: capitalize;
-  color: #f4f4f4;
-
-  width: auto;
-}
 /* Footer */
 footer {
-  background: rgba(0, 0, 0, 0.603);
+  background: rgba(0, 0, 0);
   height: 200px;
   width: 100vw;
 }
@@ -319,9 +167,52 @@ footer {
   width: 100%;
   transition: background-color 1s ease-in;
 }
-
+.ml {
+  margin-left: 2em;
+  padding: 1em;
+}
+.heading-1 {
+  font-size: 2em;
+  outline: dashed #f44336 2px;
+  color: #333;
+  width: 90%;
+}
+.hyper-link {
+  text-decoration: none;
+  color: #f44336;
+  font-weight: 100;
+}
+.hyper-link:hover {
+  outline: dashed #f44336 2px;
+}
 /* canvsd */
 .canvas {
   max-width: 1000px;
   margin: auto;
+}
+/* CArd Animation */
+
+.active {
+  opacity: 1;
+  transition: 5s ease-in;
+}
+/* Load More Button */
+button {
+}
+.noContent {
+  background: red;
+}
+.content {
+  display: none;
+}
+
+/* Icon Animation */
+.fa-angle-down {
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-10px);
+    transition: 5s ease;
+  }
 }

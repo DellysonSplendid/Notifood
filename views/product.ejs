@@ -1,44 +1,110 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/app.css" />
+    <%- include ./partials/header%>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Index</title>
+    <title><%=title%>></title>
+    <script src="https://kit.fontawesome.com/2ba7bd242c.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
     <%- include ./partials/nav%>
-
+    <br />
+    <h1 class="heading-1 ml">
+      Below are the Available Product for Display on this platform
+    </h1>
     <div class="four-cards">
       <div class="card-container">
+        <% if(products.length > 0){%> <% products.forEach(function(product){%>
+        <div class="tile job-bucket content">
+          <div class="front">
+            <div class="contents">
+              <img src="../<%=product.productImage%>" alt="ProductImage" />
+              <h3><%=product.productName%></h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                sint eligendi laborum est nostrum natus ipsum eum cumque quae
+                accusamus!
+              </p>
+              <br />
+              <a class="details" href="/products/view/<%=product.id%>">
+                View Product</a
+              >
+            </div>
+          </div>
+          <div class="back">
+            <h3>Product Info</h3>
+            <a class="details" href="#">Location: <%=product.location%></a>
+            <a class="details" href="#">Type: <%=product.type%></a>
+
+            <a class="details" href="/products/view/<%=product.id%>">
+              View More Info.</a
+            >
+          </div>
+        </div>
+        <%})%> <%}%>
+
+        <p>Products Not Available</p>
+      </div>
+
+      <!-- <div class="card-container">
         <% products.forEach(function(product){%>
 
-        <div class="card">
+        <div class="card content " data-aos=" fade-down">
+          <div class="front">
+            Details
+          </div>
           <div class="card-image">
             <img src="../<%=product.productImage%>" alt="ProductImage" />
           </div>
-          <div class="card-body">
+
+          <div class="card-body back ">
             <div class="detail">Product Name: <%=product.productName%></div>
-            <div class="detail">Price: <%=product.price%></div>
-            <div class="detail">Quality: <%=product.quality%></div>
+
             <div class="detail">Location: <%=product.location%></div>
             <div class="detail">Type: <%=product.type%></div>
+
             <div class="detail">
-              Last Updated: <%= new Date().toDateString()%>
-            </div>
-            <div>
               <a href="/products/view/<%=product.id%>"> View More Info.</a>
             </div>
           </div>
         </div>
 
         <%})%>
-      </div>
+      </div> -->
+
+      <button id="loadMore">
+        <i class=" fas fa-angle-down fa-3x "></i>
+      </button>
     </div>
 
     <%- include ./partials/footer%>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".content")
+          .slice(0, 12)
+          .show();
+        $("#loadMore").on("click", function(e) {
+          e.preventDefault();
+          $(".content:hidden")
+            .slice(0, 4)
+            .slideDown();
+          if ($(".content:hidden").length == 0) {
+            $("#loadMore")
+              .html("<i class='fas fa-sync fa-spin'></i>")
+              .addClass("noContent");
+          }
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

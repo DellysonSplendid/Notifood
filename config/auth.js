@@ -3,7 +3,7 @@ module.exports = {
     if (req.isAuthenticated()) {
       return next();
     }
-    req.flash("error_msg", "please login Biko to add product");
-    res.redirect("/register");
+    req.flash("error_msg", "please login ");
+    res.redirect("/login");
   }
 };

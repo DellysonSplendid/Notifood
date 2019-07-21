@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const Product = require("../models/Product.js");
+const { ensureAuthenticated } = require("../config/auth");
 
 const passport = require("passport");
-const { ensureAuthenticated } = require("../config/auth");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -91,7 +91,8 @@ router.get("/:id", (req, res) => {
       throw err;
     }
     res.render("product-info", {
-      products
+      products,
+      title: "Products Info"
     });
   });
 });
@@ -106,6 +107,7 @@ router.get("/:page", (req, res, next) => {
         if (err) return next(err);
         res.render("product", {
           products: products,
+          title: "Products",
           current: page,
           page: Math.ceil(count / perPage)
         });

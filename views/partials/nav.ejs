@@ -7,5 +7,24 @@
     <a href="/products/add">Add Products</a>
     <a href="/register">Register</a>
     <a href="/login">Login</a>
+    <a href="/user/profile">Profile</a>
   </div>
 </header>
+
+<script>
+  let navBtn = document.querySelectorAll(".nav a");
+  console.log(navBtn);
+  navBtn.forEach(nav => {
+    nav.addEventListener(
+      "click",
+      e => {
+        let active = document.querySelector(".navActive");
+        if (e != null) {
+          active.classList.remove("navActive");
+        }
+        e.target.className = "active";
+      },
+      false
+    );
+  });
+</script>

@@ -1,28 +1,30 @@
 const express = require("express");
 const User = require("../models/User.js");
-const multer = require("multer");
-const bcrypt = require("bcryptjs");
 const router = express.Router();
 const passport = require("passport");
+const multer = require("multer");
+const bcrypt = require("bcryptjs");
+const { ensureAuthenticated } = require("../config/auth");
 
-router.get("/", (req, res) => {
-  res.render("index", {
-    title: "Home"
-  });
-});
-// Registration
 router.get("/register", (req, res) => {
   res.render("register", {
     title: "Register"
   });
 });
 
-// router.get("/login", (req, res) => {
-//   res.render("login", {
-//     title: "Login"
-//   });
-// });
+router.get("/login", (req, res) => {
+  res.render("login", {
+    title: "Login"
+  });
+});
 
+router.get("/", ensureAuthenticated, (req, res) => {
+  res.render("profile", {
+    title: "Profile",
+    profilePicture: req.user.profilePicture,
+    username: req.user.email
+  });
+});
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./profileUpload/");
@@ -109,24 +111,4 @@ router.post("/register", upload.single("profilePicture"), (req, res) => {
   }
 });
 
-// Login
-router.get("/login", (req, res) => {
-  res.render("login", {
-    title: "Login"
-  });
-});
-router.post("/login", (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/products/add",
-    failureRedirect: "/login",
-    failureFlash: true
-  })(req, res, next);
-});
-
-// Logout
-router.get("/logout", (req, res) => {
-  req.logout();
-  req.flash("success_msg", "You are logged out");
-  res.redirect("/login");
-});
 module.exports = router;

@@ -1,0 +1,137 @@
+.modal-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+.modal {
+  width: 800px;
+  height: auto;
+  border: solid #000 2px;
+  padding: 1rem;
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+  display: none;
+  background: palevioletred;
+}
+.modalheader {
+  border-bottom: solid #000 2px;
+}
+.modalbody {
+  padding: 2rem;
+}
+.modalfooter {
+  border-top: #000 2px solid;
+  padding: 1rem 1rem;
+}
+
+.active {
+  transition: all 2s ease-out;
+  z-index: 2;
+  display: block;
+  position: absolute;
+}
+/* #toggle {
+  background: brown;
+  padding: 2rem;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+} */
+.close {
+  font-size: 2rem;
+  float: right;
+  color: #fff;
+  cursor: pointer;
+}
+/* Inputs */
+
+/* Full-width input fields */
+.modal input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: rgb(151, 84, 84);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.modal input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: rgb(151, 84, 84);
+  color: #f4f4f4;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* select dropdown */
+.modal .select-dropdown {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f4f4f4;
+  line-height: 1.3;
+  padding: 0.6em 1.4em.5em 0.8em;
+  max-width: 100%;
+  box-sizing: inherit;
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  background-color: rgb(151, 84, 84);
+  background-image: linear-gradient(
+    to bottom hsl(50, 60%, 20%),
+    hsl(20, 60%, 20%)
+  );
+  background-size: cover;
+  background-repeat: none;
+}
+.modal .select-dropdown::-ms-expand {
+  display: none;
+}
+.modal .select-dropdown:hover {
+  border-color: #f44336;
+}
+.modal .select-dropdown:focus {
+  border-color: #888;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+.modal .select-dropdown option {
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+input[type="file"] {
+  background: #222;
+  border: none;
+}

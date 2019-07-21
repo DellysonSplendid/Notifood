@@ -1,26 +1,57 @@
-<!DOCTYPE html>
-<html>
 
-<head>
     <%- include ./partials/header%>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <title><%=title%></title>
-</head>
+    <title><%=title%></title>
+    <script src="https://kit.fontawesome.com/2ba7bd242c.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
 
-<body>
-    <header>
-       <%- include ./partials/nav%>
-          
+  <body>
+  <header>
+  <h1>NotiFood</h1>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/products/view">View Products</a>
+    <a href="/products/add">Add Products</a>
+    <!-- <a href="/register">Register</a> -->
+    
+    <!-- <a href="/user/profile">Profile</a> -->
+    <a href="/logout"
+            >Logout <i class="fa fa-sign-out" aria-hidden="true"></i
+          ></a>
+  </div>
+</header>
 
-        
-    </header>
-     <br />
-    <h1 class="heading-1 ml">
-    Add your product here...
-    </h1>
-    <div class="container">
+    <div class="profile-container">
+      <div class="profile">
+        <div class="profile-image">
+          <img src="../<%=profilePicture%>" alt="ProductImage" />
+        </div>
+        <div class="profile-details">
+          <p class="detail">Username: <span><%=username%></span></p>
+        </div>
+        <button>
+          <a href="#" id="toggle"
+            >Add Products <i class="fa fa-plus" aria-hidden="true"></i
+          ></a>
+        </button>
+        <button>
+          <a href="/logout"
+            >Logout <i class="fa fa-sign-out" aria-hidden="true"></i
+          ></a>
+        </button>
+      </div>
+    </div>
+<div class="modal-container">
+  <div class="modal">
+      <div class="modalheader">
+        <span class="close">&times;</span>
+        <h1>Add your product here...</h1>
+      </div>
+      <div class="modalbody">
+  
         <form action="/products/view" method="post" enctype="multipart/form-data">
         
             <label for="food-name">Product Name</label>
@@ -127,20 +158,24 @@
             <input type="file" name="productImage" required="required">
 </label>
 
-<div class="clearfix">
+      </div>
+      <div class="modalfooter">
+       <div class="clearfix">
     <button type="submit" class="signupbtn">submit</button>
 </div>
         
         </form>
-
-
-
-                </div>
-            </div>
-        </form>
+      </div>
     </div>
-  <%- include ./partials/extensions%>
-   <%- include ./partials/footer%>
-</body>
+    </div>
+    
 
-</html>
+ 
+   
+
+    <%- include ./partials/extensions%>
+   
+    <%- include ./partials/footer%>
+   
+   
+

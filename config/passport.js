@@ -9,8 +9,7 @@ module.exports = function(passport) {
   passport.use(
     new LocalStrategy(
       {
-        usernameField: "email",
-        passwordField: "password"
+        usernameField: "email"
       },
       (email, password, done) => {
         // Match User
