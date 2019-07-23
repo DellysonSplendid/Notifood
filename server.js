@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const router = express.Router();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
@@ -53,6 +54,7 @@ app.use(function(req, res, next) {
 // Morgan
 app.use(morgan("dev"));
 // Routes
+
 app.use("/", route);
 app.use("/register", userRoute);
 app.use("/login", userRoute);
