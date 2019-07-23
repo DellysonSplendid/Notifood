@@ -53,7 +53,7 @@ app.use(function(req, res, next) {
 // Morgan
 app.use(morgan("dev"));
 // Routes
-app.use("/", require("./Routes/index"));
+app.use("/", route);
 app.use("/register", userRoute);
 app.use("/login", userRoute);
 app.use("/user/profile", require("./Routes/user"));
