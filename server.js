@@ -7,11 +7,11 @@ const morgan = require("morgan");
 const flash = require("connect-flash");
 const PORT = process.env.PORT || 3000;
 const path = require("path");
-const route = require("./Routes/index");
-const userRoute = require("./Routes/user");
-const productRouter = require("./Routes/productRouter.js");
-const userApiRouter = require("./Routes/userApiRouter.js");
-const productsApiRouter = require("./Routes/productsApiRouter.js");
+const route = require("./routes/index");
+const userRoute = require("./routes/user");
+const productRouter = require("./routes/productRouter.js");
+const userApiRouter = require("./routes/userApiRouter.js");
+const productsApiRouter = require("./routes/productsApiRouter.js");
 const config = require("./config/database.js");
 const passport = require("passport");
 require("./config/passport")(passport);
@@ -58,7 +58,7 @@ app.use(morgan("dev"));
 app.use("/", route);
 app.use("/register", userRoute);
 app.use("/login", userRoute);
-app.use("/user/profile", require("./Routes/user"));
+app.use("/user/profile", require("./routes/user"));
 //
 // User Api Routes
 app.use("/api/users", userApiRouter);
