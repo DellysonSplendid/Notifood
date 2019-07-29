@@ -18,7 +18,10 @@
     </h1>
     <div class="four-cards">
       <div class="card-container">
-        <% if(products.length > 0){%> <% products.forEach(function(product){%>
+        <% if(products.length < 0){%>
+
+        <p>Products Not Available</p>
+        <%} else {%> <% products.forEach(function(product){%>
         <div class="tile job-bucket content">
           <div class="front">
             <div class="contents">
@@ -46,35 +49,7 @@
           </div>
         </div>
         <%})%> <%}%>
-
-        <p>Products Not Available</p>
       </div>
-
-      <!-- <div class="card-container">
-        <% products.forEach(function(product){%>
-
-        <div class="card content " data-aos=" fade-down">
-          <div class="front">
-            Details
-          </div>
-          <div class="card-image">
-            <img src="../<%=product.productImage%>" alt="ProductImage" />
-          </div>
-
-          <div class="card-body back ">
-            <div class="detail">Product Name: <%=product.productName%></div>
-
-            <div class="detail">Location: <%=product.location%></div>
-            <div class="detail">Type: <%=product.type%></div>
-
-            <div class="detail">
-              <a href="/products/view/<%=product.id%>"> View More Info.</a>
-            </div>
-          </div>
-        </div>
-
-        <%})%>
-      </div> -->
 
       <button id="loadMore">
         <i class=" fas fa-angle-down fa-3x "></i>

@@ -44,26 +44,6 @@ input[type="file"] {
   border: none;
 }
 
-/* Nav Links */
-.nav {
-  width: 100%;
-  height: auto;
-  border-bottom: #222 solid 2px;
-}
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  padding: 1.2rem;
-}
-.nav a:hover {
-  color: #f44336;
-  outline: dashed #f44336 2px;
-}
-.navActive {
-  color: #f44336;
-  outline: dashed #f44336 2px;
-}
-
 /* Extra styles for the cancel button */
 .cancelbtn,
 .signupbtn {

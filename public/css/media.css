@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+  .grids {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .side-one {
+    width: 80%;
+    text-align: center;
+  }
+  .side-one .heading-1 {
+    width: 100%;
+  }
+  .side-two {
+    width: 100%;
+  }
+  .sub-cards {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1rem;
+  }
+  .sub-cards .card {
+    width: 100%;
+  }
+}

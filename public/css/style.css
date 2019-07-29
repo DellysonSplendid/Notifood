@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito|Pacifico&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -13,6 +14,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
+  width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -30,8 +32,8 @@ body::-webkit-scrollbar-thumb {
 /* Heading */
 header {
   height: auto;
-  width: 100vw;
-  line-height: 70px;
+  width: 100%;
+  line-height: 50px;
   /* background-image: linear-gradient(
     to right,
     #f78ca0 0%,
@@ -45,15 +47,40 @@ header {
   color: #f1f1f1;
   font-family: "pacifico", sans-serif;
 }
-header h1 {
-  text-align: center;
+header {
+  position: relative;
 }
 header .nav {
   text-align: center;
   font-family: "nunito  ", sans-serif;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   background: rgba(165, 42, 42, 0.863);
 }
+
+/* Nav Links */
+.nav {
+  width: 100%;
+  height: auto;
+  border-bottom: #222 solid 2px;
+  position: fixed;
+  top: 0;
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.89em;
+}
+.nav a:hover {
+  color: #f44336;
+  outline: dashed #f44336 2px;
+}
+.navActive {
+  color: #f44336;
+  outline: dashed #f44336 2px;
+}
+
 .container {
   max-width: 760px;
   margin: 80px auto;
@@ -66,18 +93,19 @@ header .nav {
   );
 }
 .banner {
-  height: 400px;
+  height: auto;
+
   line-height: 2.3;
 }
 .banner h2 {
-  margin-top: 1rem;
+  padding-top: 4rem;
   text-align: center;
   font-size: 2.5em;
 }
 .banner p {
   text-align: center;
   font-size: 1.2em;
-  width: 60%;
+  width: 70%;
   margin: auto;
 }
 
@@ -197,8 +225,6 @@ footer {
   transition: 5s ease-in;
 }
 /* Load More Button */
-button {
-}
 .noContent {
   background: red;
 }

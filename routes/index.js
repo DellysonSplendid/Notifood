@@ -101,7 +101,7 @@ router.post("/register", upload.single("profilePicture"), (req, res) => {
                 );
                 res.redirect("/login");
               })
-              .catch(err => throw err));
+              .catch(err => console.log(err));
           });
         });
       }
