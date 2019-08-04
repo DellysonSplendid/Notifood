@@ -22,5 +22,135 @@
   }
   .sub-cards .card {
     width: 100%;
+    margin-left: 0.5em;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .nav {
+    font-size: 0.5em;
+  }
+  .banner h2 {
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .banner p {
+    font-size: 0.5em;
+  }
+  .standalone-card {
+    padding: 1rem;
+    height: 200px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .standalone-card .mission {
+    font-size: 0.6em;
+  }
+  .card-container .card {
+    height: auto;
+  }
+  .grids {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .four-cards {
+    margin-right: 1em;
+  }
+  .four-cards .card-container {
+    height: auto;
+  }
+  .card-body {
+    padding-left: 0.4em;
+  }
+
+  .side-one {
+    width: 80%;
+    text-align: center;
+  }
+  .subscription {
+    width: 100%;
+  }
+  .grids .side-two .sub-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .side-one {
+    margin-top: auto;
+  }
+  .side-one .heading-1 {
+    font-size: 1em;
+  }
+  .side-one p {
+    font-size: 0.3em;
+  }
+  footer {
+    height: auto;
+  }
+}
+}
+@media screen and (max-width: 375px) {
+  header .nav {
+    font-size: 0.5em;
+  }
+  .banner h2 {
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .banner p {
+    font-size: 0.5em;
+  }
+  .standalone-card {
+    padding: 1rem;
+    height: 200px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .standalone-card .mission {
+    font-size: 0.6em;
+  }
+  .card-container .card {
+    height: auto;
+  }
+  .grids {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .four-cards {
+    margin-right: 1em;
+  }
+  .four-cards .card-container {
+    height: auto;
+  }
+  .card-body {
+    padding-left: 0.4em;
+  }
+
+  .side-one {
+    width: 80%;
+    text-align: center;
+  }
+  .subscription {
+    width: 100%;
+  }
+  .grids .side-two .sub-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .side-one {
+    margin-top: auto;
+  }
+  .side-one .heading-1 {
+    font-size: 1em;
+  }
+  .side-one p {
+    font-size: 0.3em;
+  }
+  footer {
+    height: auto;
   }
 }

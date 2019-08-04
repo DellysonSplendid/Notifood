@@ -17,7 +17,7 @@ module.exports = function(passport) {
           .then(user => {
             if (!user) {
               return done(null, false, {
-                message: "Email is already used"
+                message: "User does not exit!"
               });
             }
             bcrypt.compare(password, user.password, (err, isMatch) => {

@@ -15,8 +15,10 @@
 <% } %>
 
 <script>
-  document.querySelector(".close").addEventListener("click", function(e) {
-    e.preventDefault();
-    e.target.parentNode.classList.add("non-active");
-  });
+  function close(e) {
+    if (!e.target.matches(".close")) return;
+    document.querySelector(".close").parentNode.classList.add("non-active");
+  }
+
+  document.addEventListener("click", close);
 </script>

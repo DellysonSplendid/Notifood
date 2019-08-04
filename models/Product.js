@@ -13,6 +13,10 @@ const productSchema = new mongoose.Schema({
     required: false,
     type: String
   },
+  user: {
+    type: String,
+    required: true
+  },
   type: {
     required: false,
     type: String

@@ -11,17 +11,14 @@
     <header>
       <%- include ./partials/nav%>
     </header>
-    <br />
-    <h1 class="heading-1 ml">
-      Register Here...
-    </h1>
-    <div class="container">
-      <form
+    <br /> <form
         action="/register"
         method="POST"
         enctype="multipart/form-data"
         style="border:2px solid #fff"
       >
+    <div class="container">
+     
         <div class="container">
           <%- include ./partials/message%>
 
@@ -30,14 +27,15 @@
           <hr />
 
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required />
+          <input type="text" placeholder="Enter Email" name="email" required  />
 
           <label for="psw"><b>Password</b></label>
           <input
             type="password"
             placeholder="Enter Password"
             name="password"
-            required
+            required 
+           
           />
 
           <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -46,13 +44,14 @@
             placeholder="Repeat Password"
             name="password2"
             required
+           
           />
           <label for="psw-repeat"><b>Profile Picture</b></label>
           <input
             type="file"
             placeholder="Repeat Password"
             name="profilePicture"
-            required
+            required 
           />
 
           <div class="clearfix">

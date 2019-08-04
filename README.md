@@ -27,6 +27,7 @@ A Personal Project
 - Add a User Profile Picture[*]
 - Setting up the Frontend[*]
 - Implement a Chart[*]
+- Implement a Dashbard[]
 
 ## To Use /or Contribute
 

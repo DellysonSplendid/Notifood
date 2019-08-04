@@ -19,11 +19,22 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/", ensureAuthenticated, (req, res) => {
-  res.render("profile", {
-    title: "Profile",
-    profilePicture: req.user.profilePicture,
-    username: req.user.email
-  });
+  const Product = require("../models/Product");
+
+  Product.find({ user: req.user.id })
+    .sort({ date: "desc" })
+    .then((products, err) => {
+      if (err) {
+        throw err;
+      } else {
+        res.render("profile", {
+          title: "Profile",
+          products,
+          profilePicture: req.user.profilePicture,
+          username: req.user.email
+        });
+      }
+    });
 });
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {

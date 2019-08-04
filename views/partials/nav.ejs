@@ -1,14 +1,24 @@
 <header>
-  <div class="nav">
+  <div class="nav" id="dashboard">
     <h1>
       <span>Notifood</span>
     </h1>
+
+    <%if(user){%>
     <a href="/">Home</a>
     <a href="/products/view">View Products</a>
     <a href="/products/add">Add Products</a>
+    <a href="/user/profile">Profile</a>
+    <a href="/logout">Logout</a>
+    <%}else{%>
+    <a href="/products/view">View Products</a>
     <a href="/register">Register</a>
     <a href="/login">Login</a>
-    <a href="/user/profile">Profile</a>
+
+    <%}%>
+  </div>
+  <div class="navbar">
+    <span class="toggle"> &#9776;</span>
   </div>
 </header>
 

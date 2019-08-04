@@ -56,11 +56,12 @@ header .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: rgba(165, 42, 42, 0.863);
+  background: rgba(165, 42, 42);
+  z-index: 99;
 }
 
 /* Nav Links */
-.nav {
+header .nav {
   width: 100%;
   height: auto;
   border-bottom: #222 solid 2px;
@@ -81,9 +82,13 @@ header .nav {
   outline: dashed #f44336 2px;
 }
 
+.navbar {
+  display: none;
+}
 .container {
   max-width: 760px;
   margin: 80px auto;
+  border-radius: 15px;
   background-image: linear-gradient(
     to right,
     #f78ca0 0%,
@@ -98,7 +103,6 @@ header .nav {
   line-height: 2.3;
 }
 .banner h2 {
-  padding-top: 4rem;
   text-align: center;
   font-size: 2.5em;
 }
@@ -233,6 +237,11 @@ footer {
 }
 
 /* Icon Animation */
+#loadMore {
+  background: #f9748f;
+  outline: none;
+  width: 100%;
+}
 .fa-angle-down {
   animation: bounce 1s infinite;
 }

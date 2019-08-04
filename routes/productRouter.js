@@ -30,15 +30,18 @@ const upload = multer({
 });
 
 router.get("/", (req, res) => {
-  Product.find({}, (err, products) => {
+  Product.find({}, err => {
     if (err) {
       res.json(err);
     }
-    res.render("product", {
-      title: "Products Available",
-      products: products
+  })
+    .sort({ date: "desc" })
+    .then(products => {
+      res.render("product", {
+        title: "Products Available",
+        products: products
+      });
     });
-  });
 });
 
 router.get("/add", ensureAuthenticated, (req, res) => {
@@ -55,6 +58,7 @@ router.post("/", upload.single("productImage"), (req, res) => {
     location: location,
     quality: quality,
     type: type,
+    user: req.user.id,
     productImage: req.file.path
   });
   product.save(err => {
@@ -63,24 +67,9 @@ router.post("/", upload.single("productImage"), (req, res) => {
         title: "Error"
       });
     } else {
-      res.render("success");
+      req.flash("success_msg", " Product Added Successfully");
+      res.redirect("/");
     }
-  });
-});
-
-router.put("/:id", (req, res) => {
-  let condition = { _id: req.params.id };
-  Product.update(condition, req.body).then(doc => {
-    if (!doc) {
-      return res.status(400).end();
-    }
-    return res.status(200).json(doc);
-  });
-});
-
-router.delete("/:id", (req, res) => {
-  Product.findByIdAndRemove({ _id: req.params.id }).then(product => {
-    res.json(product);
   });
 });
 
@@ -95,24 +84,6 @@ router.get("/:id", (req, res) => {
       title: "Products Info"
     });
   });
-});
-router.get("/:page", (req, res, next) => {
-  let perPage = 6;
-  let page = req.params.page || 1;
-  Product.find({})
-    .skip(perPage * page - perPage)
-    .limit(perPage)
-    .exec((err, products) => {
-      Product.count().exec(function(err, count) {
-        if (err) return next(err);
-        res.render("product", {
-          products: products,
-          title: "Products",
-          current: page,
-          page: Math.ceil(count / perPage)
-        });
-      });
-    });
 });
 
 module.exports = router;

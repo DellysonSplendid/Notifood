@@ -13,15 +13,11 @@
   <body>
     <%- include ./partials/nav%>
     <br />
-    <h1 class="heading-1 ml">
-      Below are the Available Product for Display on this platform
-    </h1>
-    <div class="four-cards">
-      <div class="card-container">
-        <% if(products.length < 0){%>
 
-        <p>Products Not Available</p>
-        <%} else {%> <% products.forEach(function(product){%>
+    <div class="four-cards">
+      <% if(products){%>
+      <div class="card-container">
+        <% products.forEach(function(product){%>
         <div class="tile job-bucket content">
           <div class="front">
             <div class="contents">

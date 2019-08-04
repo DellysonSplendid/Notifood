@@ -23,7 +23,7 @@ hr {
   margin-bottom: 25px;
 }
 
-/* Set a style for all buttons */
+/* Set a style for all buttons
 button {
   background-color: #4caf50;
   color: white;
@@ -33,7 +33,7 @@ button {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-}
+} */
 
 button:hover {
   opacity: 1;

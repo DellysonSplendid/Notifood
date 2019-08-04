@@ -3,18 +3,18 @@
 }
 
 .alert.alert-danger {
-  color: #fff;
-  background: red;
+  color: rgb(228, 222, 222);
+  background: rgba(211, 26, 26, 0.671);
   border-radius: 5px;
 }
 
 .alert.alert-success {
-  color: #fff;
-  background: green;
+  color: rgb(155, 195, 155);
+  background: rgba(25, 146, 25, 0.637);
   border-radius: 5px;
 }
 
 .non-active {
-  display: none;
+  opacity: 0;
   transition: all 1s linear;
 }
