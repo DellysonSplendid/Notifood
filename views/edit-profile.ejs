@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ./partials/header%>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>register</title>
+  </head>
+  <body>
+    <header>
+      <%- include ./partials/nav%>
+    </header>
+    <br /> <form
+        action="/register"
+        method="POST"
+        enctype="multipart/form-data"
+        style="border:2px solid #fff"
+      >
+      <h1>Edit your details</h1>
+    <div class="container">
+     
+        <div class="container">
+          <%- include ./partials/message%>
+
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr />
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required  value="<%=email%>"  />
+
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+            value="<%=password%>"
+           
+          />
+
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input
+            type="password"
+            placeholder="Repeat Password"
+            name="password2"
+            required
+            value="<%=password2%>"
+           
+          />
+          <label for="psw-repeat"><b>Profile Picture</b></label>
+          <input
+            type="file"
+            placeholder="Repeat Password"
+            name="profilePicture"
+            required 
+          />
+
+          <div class="clearfix">
+            <input
+              type="reset"
+              style="border: none; color:#fff; width:100px; margin-right:2em; margin-top:.7em;"
+              class="cancelbtn"
+              value="Cancel"
+            />
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <%- include ./partials/extensions%> <%- include ./partials/footer%>
+  </body>
+</html>

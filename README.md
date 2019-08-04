@@ -27,7 +27,9 @@ A Personal Project
 - Add a User Profile Picture[*]
 - Setting up the Frontend[*]
 - Implement a Chart[*]
-- Implement a Dashbard[]
+- Implement a Dashbard[*]
+- Implement a Edit for Logged in user[]
+- Implement a Delete for a Logged in user[]
 
 ## To Use /or Contribute
 

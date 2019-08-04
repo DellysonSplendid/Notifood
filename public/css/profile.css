@@ -36,19 +36,13 @@
   text-decoration: none;
   color: #f4f4f4;
 }
-.fa-sign-out {
-  animation: moveon 1.5s infinite;
-}
+
 .fa-plus {
   display: block;
   animation: breadth 1.9s alternate infinite ease-in;
   background: brown;
 }
-@keyframes moveon {
-  100% {
-    transform: translateX(10px);
-  }
-}
+
 @keyframes breadth {
   0% {
     transform: scale(1.2);
@@ -62,7 +56,9 @@
   display: flex;
   flex-direction: row;
 }
-
+.side-nav__items-sm{
+  display: none !important;
+}
 /* Side Nav */
 .side-nav {
   width: 20vw;
@@ -83,6 +79,15 @@
   font-weight: 500px;
   padding: 1.5rem;
   color: whitesmoke;
+}
+.side-nav__items-sm {
+  border-top: #444 solid 1px;
+  border-bottom: #444 solid 1px;
+  font-size: 1.2em;
+  font-weight: 500px;
+  padding: 1.5rem;
+  color: whitesmoke
+  display: none;
 }
 
 .side-nav__profile-image {
@@ -107,7 +112,7 @@
   width: 23%;
   border: whitesmoke 2px solid;
   margin-left: 1rem;
-  height: 290px;
+  height: 400px;
   background: #f9748fee;
 }
 .figure > div,

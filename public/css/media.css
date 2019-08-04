@@ -1,4 +1,13 @@
 @media screen and (max-width: 768px) {
+  /* Prfiles */
+  .side-nav__items-sm {
+    display: none !important;
+  }
+  .figure {
+    height: auto;
+  }
+
+  /* Profiles */
   .grids {
     display: flex;
     flex-direction: column;
@@ -26,6 +35,30 @@
   }
 }
 @media screen and (max-width: 420px) {
+  /* Profiles */
+  .side-nav {
+    width: 10vh;
+  }
+  .side-nav__items {
+    display: none;
+  }
+
+  .side-nav__items-sm {
+    display: block;
+  }
+  .discovery {
+    display: flex;
+    flex-direction: column;
+  }
+  .smiles h1 {
+    font-size: 1rem;
+  }
+  .figure {
+    width: 70%;
+    margin-left: 2rem;
+  }
+
+  /* Profiles */
   header .nav {
     font-size: 0.5em;
   }
@@ -88,7 +121,6 @@
   footer {
     height: auto;
   }
-}
 }
 @media screen and (max-width: 375px) {
   header .nav {

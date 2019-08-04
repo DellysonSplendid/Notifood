@@ -28,33 +28,68 @@
 
 
 <ul class="side-na__collection">
-  <li class="side-nav__items side-nav__profile-image">
+  <li class="side-nav__items  side-nav__profile-image">
     <img src="../<%=profilePicture%>" alt="ProductImage" />
   </li>
-  <li class=" side-nav__items">
+ <li class="side-nav__items-sm side-nav__profile-image" >
+   <img src="../<%=profilePicture%>" alt="ProductImage" />
+ </li>
+  <li class=" side-nav__items ">
   <p class="detail">Email: <span><%=username%></span></p>
   </li>
-  <li class=" side-nav__items">
+   <li class="side-nav__items-sm" >
+  <p class="detail">Email: <span><%=username%></span></p>
+ </li>
+  <li class=" side-nav__items ">
           <a href="#" id="toggle"
             >Add Products <i class="fa fa-plus" aria-hidden="true"></i
           ></a>
       
   </li>
-  <li class=" side-nav__items">
+   <li class="side-nav__items-sm" >
+   <a href="#" id="toggle"
+            > <i class="fa fa-plus" aria-hidden="true"></i
+          ></a> </li>
+  
+  <li class=" side-nav__items ">
     <a href="/logout"
             >Logout <i class="fa fa-sign-out" aria-hidden="true"></i
           ></a>
   </li>
-  <li class=" side-nav__items">
-  <a href="/user/edit">Edit Profile</a>
+    <li class="side-nav__items-sm" >
+   <a href="/logout"
+            > <i class="fa fa-sign-out" aria-hidden="true"></i
+          ></a> </li>
+  <li class=" side-nav__items ">
+  <a href="/edit">Edit Profile</a>
   </li>
-  <li class=" side-nav__items">
+   <li class="side-nav__items-sm" >
+   <a href="/edit"
+            ><i class="far fa-edit"></i></a> </li>
+  <li class=" side-nav__items ">
    <a href="/"> Home</a>
   </li>
+   <li class="side-nav__items-sm" >
+   <a href="/edit"
+            ><i class="fas fa-home"></i>
+</a> </li>
+  <li class="side-nav__items  menu">	&#9776;</li>
+  <li class="side-nav__items-sm  menu">	&#9776;</li>
 </ul>
 
 
+<script>
+  document.addEventListener("click", function(e) {
+    e.preventDefault();
 
+    if(!e.target.matches(".menu"))return;
+    document.querySelectorAll(".side-nav__items ").forEach((navItem) => {
+      navItem.classList.toggle("active")
+    })
+  })
+
+
+</script>
 
 </div>
 
