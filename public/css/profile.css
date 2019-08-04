@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: row;
 }
-.side-nav__items-sm{
+.side-nav__items-sm {
   display: none !important;
 }
 /* Side Nav */
@@ -86,7 +86,7 @@
   font-size: 1.2em;
   font-weight: 500px;
   padding: 1.5rem;
-  color: whitesmoke
+  color: whitesmoke;
   display: none;
 }
 
